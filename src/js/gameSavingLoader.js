@@ -7,8 +7,8 @@ export default class GameSavingLoader {
     return new Promise(async (resolve, reject) => {
       try {
         const data = await read();
-        const value = await json(data);
-        resolve(value);
+        const GameSaving = await json(data);
+        resolve({ GameSaving });
       } catch (e) {
         reject(e);
       }
